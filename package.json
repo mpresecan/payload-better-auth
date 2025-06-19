@@ -1,7 +1,7 @@
 {
-  "name": "better-auth-payload",
+  "name": "payload-stack",
   "version": "1.0.0",
-  "description": "A blank template to get started with Payload 3.0",
+  "description": "Next Generation Application Stack",
   "license": "MIT",
   "type": "module",
   "scripts": {
@@ -20,13 +20,27 @@
     "@payloadcms/payload-cloud": "3.42.0",
     "@payloadcms/richtext-lexical": "3.42.0",
     "@payloadcms/ui": "3.42.0",
+    "@radix-ui/react-label": "^2.1.7",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@tailwindcss/postcss": "^4.1.10",
+    "better-auth": "^1.2.9",
+    "better-auth-harmony": "^1.2.5",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "cross-env": "^7.0.3",
     "graphql": "^16.8.1",
+    "lucide-react": "^0.518.0",
     "next": "15.3.0",
+    "next-themes": "^0.4.6",
     "payload": "3.42.0",
+    "payload-auth": "^1.6.4",
+    "postcss": "^8.5.6",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "sharp": "0.32.6"
+    "sharp": "0.32.6",
+    "sonner": "^2.0.5",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": "^4.1.10"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
@@ -36,6 +50,7 @@
     "eslint": "^9.16.0",
     "eslint-config-next": "15.3.0",
     "prettier": "^3.4.2",
+    "tw-animate-css": "^1.3.4",
     "typescript": "5.7.3"
   },
   "engines": {

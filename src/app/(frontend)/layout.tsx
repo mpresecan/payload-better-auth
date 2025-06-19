@@ -1,19 +1,51 @@
-import React from 'react'
-import './styles.css'
+import type { Metadata, Viewport } from 'next'
+import { cn } from '@/utilities/cn'
+import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
+import './globals.css'
+import { Inter } from "next/font/google";
+import { TailwindIndicator } from '@/components/tailwind-indicator'
+import { ThemeProvider } from '@/providers/theme-provider';
 
-export const metadata = {
-  description: 'A blank template using Payload in a Next.js app.',
-  title: 'Payload Blank Template',
-}
 
-export default async function RootLayout(props: { children: React.ReactNode }) {
-  const { children } = props
+const inter = Inter({ subsets: ["latin"] });
+
+export const viewport: Viewport = {
+  colorScheme: "light",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
+};
+
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
 
   return (
-    <html lang="en">
-      <body>
-        <main>{children}</main>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={cn(
+          'min-h-screen bg-background font-sans antialiased w-full mx-auto scroll-smooth',
+          inter.className,
+        )}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+          <TailwindIndicator />
+        </ThemeProvider>
       </body>
     </html>
   )
+}
+
+export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SERVER_URL || 'https://payloadcms.com'),
+  openGraph: mergeOpenGraph(),
+  twitter: {
+    card: 'summary_large_image',
+    creator: '@payloadcms',
+  },
 }
