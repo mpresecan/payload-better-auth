@@ -5,10 +5,9 @@ import './globals.css'
 import { Inter } from "next/font/google";
 import { TailwindIndicator } from '@/components/tailwind-indicator'
 import { ThemeProvider } from '@/providers/theme-provider';
-import { BetterAuthProvider } from '@/modules/auth/lib/context'
-import { getContextProps } from '@/modules/auth/lib/context/get-context-props'
 import { isImpersonationEnabled } from '@/modules/auth/utils/is-enabled';
 import { ImpersonatingBar } from '@/modules/auth/components/admin-plugin/impersonating-bar';
+import { AuthProviders } from '@/modules/auth/providers/auth-provider';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,18 +29,18 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           inter.className,
         )}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <BetterAuthProvider {...getContextProps()}>
-            {isImpersonationEnabled && <ImpersonatingBar />}
+        <AuthProviders>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {isImpersonationEnabled && false && <ImpersonatingBar />}
             {children}
-          </BetterAuthProvider>
-          <TailwindIndicator />
-        </ThemeProvider>
+            <TailwindIndicator />
+          </ThemeProvider>
+        </AuthProviders>
       </body>
     </html>
   )

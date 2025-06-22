@@ -17,9 +17,9 @@ import { passkey } from 'better-auth/plugins/passkey'
 export const betterAuthPlugins = [
   username(),
   emailHarmony(),
-  phoneHarmony({
-    defaultCountry: 'CA'
-  }),
+  // phoneHarmony({
+  //   defaultCountry: 'CA'
+  // }),
   twoFactor({
     issuer: 'payload-stack',
     otpOptions: {
@@ -28,11 +28,11 @@ export const betterAuthPlugins = [
       }
     }
   }),
-  phoneNumber({
-    sendOTP: async ({ phoneNumber, code }, req) => {
-      console.log('Send OTP for user: ', phoneNumber, code)
-    }
-  }),
+  // phoneNumber({
+  //   sendOTP: async ({ phoneNumber, code }, req) => {
+  //     console.log('Send OTP for user: ', phoneNumber, code)
+  //   }
+  // }),
   magicLink({
     sendMagicLink: async ({ email, token, url }, request) => {
       console.log('Send magic link for user: ', email, token, url)
@@ -43,11 +43,11 @@ export const betterAuthPlugins = [
       console.log('Send verification OTP for user: ', email, otp, type)
     }
   }),
-  passkey({
-    rpID: 'localhost',
-    rpName: 'Localhost',
-    origin: 'http://localhost:3000'
-  }),
+  // passkey({
+  //   rpID: 'localhost',
+  //   rpName: 'Localhost',
+  //   origin: 'http://localhost:3000'
+  // }),
   admin(),
   organization({
     teams: {
@@ -71,7 +71,7 @@ export const betterAuthOptions: BetterAuthOptions = {
   emailAndPassword: {
     enabled: true,
     requireEmailVerification: true,
-    // autoSignIn: true,
+    autoSignIn: true,
     async sendResetPassword({ user, url }) {
       console.log('Send reset password for user: ', user.id, 'at url', url)
     }
@@ -82,13 +82,13 @@ export const betterAuthOptions: BetterAuthOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string
     }
   },
-  emailVerification: {
-    sendOnSignUp: true,
-    autoSignInAfterVerification: true,
-    async sendVerificationEmail({ user, url }) {
-      console.log('Send verification email for user: ', url)
-    }
-  },
+  // emailVerification: {
+  //   sendOnSignUp: true,
+  //   autoSignInAfterVerification: true,
+  //   async sendVerificationEmail({ user, url }) {
+  //     console.log('Send verification email for user: ', url)
+  //   }
+  // },
   plugins: betterAuthPlugins,
   user: {
     changeEmail: {
@@ -126,7 +126,7 @@ export const betterAuthOptions: BetterAuthOptions = {
   account: {
     accountLinking: {
       enabled: true,
-      trustedProviders: ['google', 'email-password']
+      trustedProviders: ['google']
     }
   }
 }

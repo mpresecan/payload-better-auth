@@ -72,7 +72,6 @@ export interface Config {
     accounts: Account;
     verifications: Verification;
     twoFactors: TwoFactor;
-    passkeys: Passkey;
     organizations: Organization;
     members: Member;
     invitations: Invitation;
@@ -90,7 +89,6 @@ export interface Config {
     accounts: AccountsSelect<false> | AccountsSelect<true>;
     verifications: VerificationsSelect<false> | VerificationsSelect<true>;
     twoFactors: TwoFactorsSelect<false> | TwoFactorsSelect<true>;
-    passkeys: PasskeysSelect<false> | PasskeysSelect<true>;
     organizations: OrganizationsSelect<false> | OrganizationsSelect<true>;
     members: MembersSelect<false> | MembersSelect<true>;
     invitations: InvitationsSelect<false> | InvitationsSelect<true>;
@@ -185,14 +183,6 @@ export interface User {
    * Whether the user has two factor authentication enabled
    */
   twoFactorEnabled?: boolean | null;
-  /**
-   * The phone number of the user
-   */
-  phoneNumber?: string | null;
-  /**
-   * Whether the phone number of the user has been verified
-   */
-  phoneNumberVerified?: boolean | null;
   /**
    * The role of the user
    */
@@ -374,50 +364,6 @@ export interface TwoFactor {
   createdAt: string;
 }
 /**
- * Passkeys are used to authenticate users
- *
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "passkeys".
- */
-export interface Passkey {
-  id: string;
-  /**
-   * The name of the passkey
-   */
-  name?: string | null;
-  /**
-   * The public key of the passkey
-   */
-  publicKey: string;
-  /**
-   * The user that the passkey belongs to
-   */
-  user: string | User;
-  /**
-   * The unique identifier of the registered credential
-   */
-  credentialID: string;
-  /**
-   * The counter of the passkey
-   */
-  counter: number;
-  /**
-   * The type of device used to register the passkey
-   */
-  deviceType: string;
-  /**
-   * Whether the passkey is backed up
-   */
-  backedUp: boolean;
-  /**
-   * The transports used to register the passkey
-   */
-  transports: string;
-  createdAt: string;
-  aaguid?: string | null;
-  updatedAt: string;
-}
-/**
  * Members of an organization.
  *
  * This interface was referenced by `Config`'s JSON-Schema
@@ -552,10 +498,6 @@ export interface PayloadLockedDocument {
         value: string | TwoFactor;
       } | null)
     | ({
-        relationTo: 'passkeys';
-        value: string | Passkey;
-      } | null)
-    | ({
         relationTo: 'organizations';
         value: string | Organization;
       } | null)
@@ -636,8 +578,6 @@ export interface UsersSelect<T extends boolean = true> {
   displayUsername?: T;
   normalizedEmail?: T;
   twoFactorEnabled?: T;
-  phoneNumber?: T;
-  phoneNumberVerified?: T;
   role?: T;
   banned?: T;
   banReason?: T;
@@ -697,23 +637,6 @@ export interface TwoFactorsSelect<T extends boolean = true> {
   user?: T;
   updatedAt?: T;
   createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "passkeys_select".
- */
-export interface PasskeysSelect<T extends boolean = true> {
-  name?: T;
-  publicKey?: T;
-  user?: T;
-  credentialID?: T;
-  counter?: T;
-  deviceType?: T;
-  backedUp?: T;
-  transports?: T;
-  createdAt?: T;
-  aaguid?: T;
-  updatedAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
