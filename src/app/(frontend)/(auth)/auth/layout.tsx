@@ -19,7 +19,7 @@ export default function Layout({ children }: React.PropsWithChildren) {
           {children}
         </div>
       </div>
-      <div className="hidden h-screen bg-background object-contain grayscale lg:block">
+      <div className="hidden bg-background object-contain grayscale lg:block min:h-screen">
         <Image
           src="/bg.jpg"
           alt={`${siteConfig.name} Background`}

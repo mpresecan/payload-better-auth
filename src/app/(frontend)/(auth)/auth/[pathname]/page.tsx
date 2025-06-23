@@ -1,9 +1,8 @@
+import { AuthCard, SignedOut, SignOut } from "@daveyplate/better-auth-ui"
 import { authViewPaths } from "@daveyplate/better-auth-ui/server"
 import { headers } from "next/headers"
 import { redirect } from "next/navigation"
-
 import { getPayload } from "@/lib/payload"
-import { AuthCard } from "@daveyplate/better-auth-ui"
 import AuthCardWrapper from "@/modules/auth/components/auth-card-wrapper"
 
 export function generateStaticParams() {

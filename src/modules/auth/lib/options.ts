@@ -1,8 +1,4 @@
-import type {
-  BetterAuthOptions,
-  BetterAuthPluginOptions
-} from "payload-auth/better-auth"
-import { emailHarmony, phoneHarmony } from "better-auth-harmony"
+import { platform } from "node:os"
 import { nextCookies } from "better-auth/next-js"
 import {
   admin,
@@ -16,6 +12,11 @@ import {
   username
 } from "better-auth/plugins"
 import { passkey } from "better-auth/plugins/passkey"
+import { emailHarmony, phoneHarmony } from "better-auth-harmony"
+import type {
+  BetterAuthOptions,
+  BetterAuthPluginOptions
+} from "payload-auth/better-auth"
 
 export const betterAuthPlugins = [
   username(),
@@ -51,6 +52,12 @@ export const betterAuthPlugins = [
     rpID: "localhost",
     rpName: "Localhost",
     origin: "http://localhost:3000"
+    // authenticatorSelection: {
+    //   authenticatorAttachment: {
+    //     platform: 'fingerprint',
+
+    //   }
+    // }
   }),
   admin(),
   organization({
@@ -62,7 +69,7 @@ export const betterAuthPlugins = [
       console.log("Send invite for org: ", data, inviteLink)
     }
   }),
-  // openAPI(),
+  openAPI(),
   nextCookies()
 ]
 
@@ -144,11 +151,11 @@ export const betterAuthOptions: BetterAuthOptions = {
 export const betterAuthPluginOptions: BetterAuthPluginOptions = {
   disabled: false,
   debug: {
-    logTables: false,
+    logTables: true,
     enableDebugLogs: true
   },
   disableDefaultPayloadAuth: true,
-  hidePluginCollections: true,
+  hidePluginCollections: false,
   users: {
     slug: "users", // not required, this is the default anyways
     hidden: false,
