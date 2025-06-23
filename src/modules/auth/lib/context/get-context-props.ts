@@ -1,6 +1,6 @@
-import type { Account, DeviceSession } from '@/modules/auth/lib/types'
-import { getPayload } from '@/lib/payload'
-import { headers as requestHeaders } from 'next/headers'
+import type { Account, DeviceSession } from "@/modules/auth/lib/types"
+import { getPayload } from "@/lib/payload"
+import { headers as requestHeaders } from "next/headers"
 
 export const getSession = async () => {
   const payload = await getPayload()
@@ -35,5 +35,10 @@ export const getContextProps = () => {
   const userAccountsPromise = getUserAccounts()
   const deviceSessionsPromise = getDeviceSessions()
   const currentUserPromise = currentUser()
-  return { sessionPromise, userAccountsPromise, deviceSessionsPromise, currentUserPromise }
+  return {
+    sessionPromise,
+    userAccountsPromise,
+    deviceSessionsPromise,
+    currentUserPromise
+  }
 }

@@ -1,6 +1,9 @@
-import type { BetterAuthOptions, BetterAuthPluginOptions } from 'payload-auth/better-auth'
-import { emailHarmony, phoneHarmony } from 'better-auth-harmony'
-import { nextCookies } from 'better-auth/next-js'
+import type {
+  BetterAuthOptions,
+  BetterAuthPluginOptions
+} from "payload-auth/better-auth"
+import { emailHarmony, phoneHarmony } from "better-auth-harmony"
+import { nextCookies } from "better-auth/next-js"
 import {
   admin,
   emailOTP,
@@ -11,8 +14,8 @@ import {
   phoneNumber,
   twoFactor,
   username
-} from 'better-auth/plugins'
-import { passkey } from 'better-auth/plugins/passkey'
+} from "better-auth/plugins"
+import { passkey } from "better-auth/plugins/passkey"
 
 export const betterAuthPlugins = [
   username(),
@@ -21,10 +24,10 @@ export const betterAuthPlugins = [
   //   defaultCountry: 'CA'
   // }),
   twoFactor({
-    issuer: 'payload-stack',
+    issuer: "payload-stack",
     otpOptions: {
       async sendOTP({ user, otp }) {
-        console.log('Send OTP for user: ', user, otp)
+        console.log("Send OTP for user: ", user, otp)
       }
     }
   }),
@@ -35,20 +38,19 @@ export const betterAuthPlugins = [
   // }),
   magicLink({
     sendMagicLink: async ({ email, token, url }, request) => {
-      console.log('Send magic link for user: ', email, token, url)
+      console.log("Send magic link for user: ", email, token, url)
     }
-
   }),
   emailOTP({
     async sendVerificationOTP({ email, otp, type }) {
-      console.log('Send verification OTP for user: ', email, otp, type)
+      console.log("Send verification OTP for user: ", email, otp, type)
     },
     sendVerificationOnSignUp: true
   }),
   passkey({
-    rpID: 'localhost',
-    rpName: 'Localhost',
-    origin: 'http://localhost:3000'
+    rpID: "localhost",
+    rpName: "Localhost",
+    origin: "http://localhost:3000"
   }),
   admin(),
   organization({
@@ -57,7 +59,7 @@ export const betterAuthPlugins = [
     },
     async sendInvitationEmail(data) {
       const inviteLink = `${process.env.NEXT_PUBLIC_BETTER_AUTH_URL}/accept-invitation/${data.id}`
-      console.log('Send invite for org: ', data, inviteLink)
+      console.log("Send invite for org: ", data, inviteLink)
     }
   }),
   // openAPI(),
@@ -67,7 +69,7 @@ export const betterAuthPlugins = [
 export type BetterAuthPlugins = typeof betterAuthPlugins
 
 export const betterAuthOptions: BetterAuthOptions = {
-  appName: 'payload-better-auth',
+  appName: "payload-better-auth",
   baseURL: process.env.NEXT_PUBLIC_BETTER_AUTH_URL,
   trustedOrigins: [process.env.NEXT_PUBLIC_BETTER_AUTH_URL!],
   emailAndPassword: {
@@ -75,7 +77,7 @@ export const betterAuthOptions: BetterAuthOptions = {
     requireEmailVerification: true,
     autoSignIn: true,
     async sendResetPassword({ user, url }) {
-      console.log('Send reset password for user: ', user.id, 'at url', url)
+      console.log("Send reset password for user: ", user.id, "at url", url)
     }
   },
   socialProviders: {
@@ -88,7 +90,7 @@ export const betterAuthOptions: BetterAuthOptions = {
     sendOnSignUp: true,
     autoSignInAfterVerification: true,
     async sendVerificationEmail({ user, url }) {
-      console.log('Send verification email for user: ', url)
+      console.log("Send verification email for user: ", url)
     }
   },
   plugins: betterAuthPlugins,
@@ -96,7 +98,13 @@ export const betterAuthOptions: BetterAuthOptions = {
     changeEmail: {
       enabled: true,
       sendChangeEmailVerification: async ({ user, newEmail, url, token }) => {
-        console.log('Send change email verification for user: ', user, newEmail, url, token)
+        console.log(
+          "Send change email verification for user: ",
+          user,
+          newEmail,
+          url,
+          token
+        )
       }
     },
     deleteUser: {
@@ -113,8 +121,8 @@ export const betterAuthOptions: BetterAuthOptions = {
     },
     additionalFields: {
       role: {
-        type: 'string',
-        defaultValue: 'user',
+        type: "string",
+        defaultValue: "user",
         input: false
       }
     }
@@ -128,7 +136,7 @@ export const betterAuthOptions: BetterAuthOptions = {
   account: {
     accountLinking: {
       enabled: true,
-      trustedProviders: ['google']
+      trustedProviders: ["google"]
     }
   }
 }
@@ -142,23 +150,23 @@ export const betterAuthPluginOptions: BetterAuthPluginOptions = {
   disableDefaultPayloadAuth: true,
   hidePluginCollections: true,
   users: {
-    slug: 'users', // not required, this is the default anyways
+    slug: "users", // not required, this is the default anyways
     hidden: false,
-    adminRoles: ['admin'],
-    allowedFields: ['name']
+    adminRoles: ["admin"],
+    allowedFields: ["name"]
   },
   accounts: {
-    slug: 'accounts'
+    slug: "accounts"
   },
   sessions: {
-    slug: 'sessions'
+    slug: "sessions"
   },
   verifications: {
-    slug: 'verifications'
+    slug: "verifications"
   },
   adminInvitations: {
     sendInviteEmail: async ({ payload, email, url }) => {
-      console.log('Send admin invite: ', email, url)
+      console.log("Send admin invite: ", email, url)
       return {
         success: true
       }

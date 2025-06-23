@@ -1,7 +1,5 @@
 const PublicPage = () => {
-    return (
-        <div>Public</div>
-    )
+  return <div>Public</div>
 }
 
 export default PublicPage

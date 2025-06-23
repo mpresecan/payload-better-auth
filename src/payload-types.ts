@@ -13,194 +13,202 @@
  * via the `definition` "supportedTimezones".
  */
 export type SupportedTimezones =
-  | 'Pacific/Midway'
-  | 'Pacific/Niue'
-  | 'Pacific/Honolulu'
-  | 'Pacific/Rarotonga'
-  | 'America/Anchorage'
-  | 'Pacific/Gambier'
-  | 'America/Los_Angeles'
-  | 'America/Tijuana'
-  | 'America/Denver'
-  | 'America/Phoenix'
-  | 'America/Chicago'
-  | 'America/Guatemala'
-  | 'America/New_York'
-  | 'America/Bogota'
-  | 'America/Caracas'
-  | 'America/Santiago'
-  | 'America/Buenos_Aires'
-  | 'America/Sao_Paulo'
-  | 'Atlantic/South_Georgia'
-  | 'Atlantic/Azores'
-  | 'Atlantic/Cape_Verde'
-  | 'Europe/London'
-  | 'Europe/Berlin'
-  | 'Africa/Lagos'
-  | 'Europe/Athens'
-  | 'Africa/Cairo'
-  | 'Europe/Moscow'
-  | 'Asia/Riyadh'
-  | 'Asia/Dubai'
-  | 'Asia/Baku'
-  | 'Asia/Karachi'
-  | 'Asia/Tashkent'
-  | 'Asia/Calcutta'
-  | 'Asia/Dhaka'
-  | 'Asia/Almaty'
-  | 'Asia/Jakarta'
-  | 'Asia/Bangkok'
-  | 'Asia/Shanghai'
-  | 'Asia/Singapore'
-  | 'Asia/Tokyo'
-  | 'Asia/Seoul'
-  | 'Australia/Brisbane'
-  | 'Australia/Sydney'
-  | 'Pacific/Guam'
-  | 'Pacific/Noumea'
-  | 'Pacific/Auckland'
-  | 'Pacific/Fiji';
+  | "Pacific/Midway"
+  | "Pacific/Niue"
+  | "Pacific/Honolulu"
+  | "Pacific/Rarotonga"
+  | "America/Anchorage"
+  | "Pacific/Gambier"
+  | "America/Los_Angeles"
+  | "America/Tijuana"
+  | "America/Denver"
+  | "America/Phoenix"
+  | "America/Chicago"
+  | "America/Guatemala"
+  | "America/New_York"
+  | "America/Bogota"
+  | "America/Caracas"
+  | "America/Santiago"
+  | "America/Buenos_Aires"
+  | "America/Sao_Paulo"
+  | "Atlantic/South_Georgia"
+  | "Atlantic/Azores"
+  | "Atlantic/Cape_Verde"
+  | "Europe/London"
+  | "Europe/Berlin"
+  | "Africa/Lagos"
+  | "Europe/Athens"
+  | "Africa/Cairo"
+  | "Europe/Moscow"
+  | "Asia/Riyadh"
+  | "Asia/Dubai"
+  | "Asia/Baku"
+  | "Asia/Karachi"
+  | "Asia/Tashkent"
+  | "Asia/Calcutta"
+  | "Asia/Dhaka"
+  | "Asia/Almaty"
+  | "Asia/Jakarta"
+  | "Asia/Bangkok"
+  | "Asia/Shanghai"
+  | "Asia/Singapore"
+  | "Asia/Tokyo"
+  | "Asia/Seoul"
+  | "Australia/Brisbane"
+  | "Australia/Sydney"
+  | "Pacific/Guam"
+  | "Pacific/Noumea"
+  | "Pacific/Auckland"
+  | "Pacific/Fiji"
 
 export interface Config {
   auth: {
-    users: UserAuthOperations;
-  };
-  blocks: {};
+    users: UserAuthOperations
+  }
+  blocks: {}
   collections: {
-    users: User;
-    sessions: Session;
-    accounts: Account;
-    verifications: Verification;
-    twoFactors: TwoFactor;
-    passkeys: Passkey;
-    organizations: Organization;
-    members: Member;
-    invitations: Invitation;
-    teams: Team;
-    'admin-invitations': AdminInvitation;
-    'legal-documents': LegalDocument;
-    'payload-locked-documents': PayloadLockedDocument;
-    'payload-preferences': PayloadPreference;
-    'payload-migrations': PayloadMigration;
-  };
-  collectionsJoins: {};
+    users: User
+    sessions: Session
+    accounts: Account
+    verifications: Verification
+    twoFactors: TwoFactor
+    passkeys: Passkey
+    organizations: Organization
+    members: Member
+    invitations: Invitation
+    teams: Team
+    "admin-invitations": AdminInvitation
+    "legal-documents": LegalDocument
+    "payload-locked-documents": PayloadLockedDocument
+    "payload-preferences": PayloadPreference
+    "payload-migrations": PayloadMigration
+  }
+  collectionsJoins: {}
   collectionsSelect: {
-    users: UsersSelect<false> | UsersSelect<true>;
-    sessions: SessionsSelect<false> | SessionsSelect<true>;
-    accounts: AccountsSelect<false> | AccountsSelect<true>;
-    verifications: VerificationsSelect<false> | VerificationsSelect<true>;
-    twoFactors: TwoFactorsSelect<false> | TwoFactorsSelect<true>;
-    passkeys: PasskeysSelect<false> | PasskeysSelect<true>;
-    organizations: OrganizationsSelect<false> | OrganizationsSelect<true>;
-    members: MembersSelect<false> | MembersSelect<true>;
-    invitations: InvitationsSelect<false> | InvitationsSelect<true>;
-    teams: TeamsSelect<false> | TeamsSelect<true>;
-    'admin-invitations': AdminInvitationsSelect<false> | AdminInvitationsSelect<true>;
-    'legal-documents': LegalDocumentsSelect<false> | LegalDocumentsSelect<true>;
-    'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
-    'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
-    'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
-  };
+    users: UsersSelect<false> | UsersSelect<true>
+    sessions: SessionsSelect<false> | SessionsSelect<true>
+    accounts: AccountsSelect<false> | AccountsSelect<true>
+    verifications: VerificationsSelect<false> | VerificationsSelect<true>
+    twoFactors: TwoFactorsSelect<false> | TwoFactorsSelect<true>
+    passkeys: PasskeysSelect<false> | PasskeysSelect<true>
+    organizations: OrganizationsSelect<false> | OrganizationsSelect<true>
+    members: MembersSelect<false> | MembersSelect<true>
+    invitations: InvitationsSelect<false> | InvitationsSelect<true>
+    teams: TeamsSelect<false> | TeamsSelect<true>
+    "admin-invitations":
+      | AdminInvitationsSelect<false>
+      | AdminInvitationsSelect<true>
+    "legal-documents": LegalDocumentsSelect<false> | LegalDocumentsSelect<true>
+    "payload-locked-documents":
+      | PayloadLockedDocumentsSelect<false>
+      | PayloadLockedDocumentsSelect<true>
+    "payload-preferences":
+      | PayloadPreferencesSelect<false>
+      | PayloadPreferencesSelect<true>
+    "payload-migrations":
+      | PayloadMigrationsSelect<false>
+      | PayloadMigrationsSelect<true>
+  }
   db: {
-    defaultIDType: string;
-  };
-  globals: {};
-  globalsSelect: {};
-  locale: null;
+    defaultIDType: string
+  }
+  globals: {}
+  globalsSelect: {}
+  locale: null
   user: User & {
-    collection: 'users';
-  };
+    collection: "users"
+  }
   jobs: {
-    tasks: unknown;
-    workflows: unknown;
-  };
+    tasks: unknown
+    workflows: unknown
+  }
 }
 export interface UserAuthOperations {
   forgotPassword:
     | {
-        email: string;
+        email: string
       }
     | {
-        username: string;
-      };
+        username: string
+      }
   login:
     | {
-        email: string;
-        password: string;
+        email: string
+        password: string
       }
     | {
-        password: string;
-        username: string;
-      };
+        password: string
+        username: string
+      }
   registerFirstUser: {
-    password: string;
-    username?: string;
-    email: string;
-  };
+    password: string
+    username?: string
+    email: string
+  }
   unlock:
     | {
-        email: string;
+        email: string
       }
     | {
-        username: string;
-      };
+        username: string
+      }
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users".
  */
 export interface User {
-  id: string;
+  id: string
   /**
    * Users chosen display name
    */
-  name: string;
+  name: string
   /**
    * The email of the user
    */
-  email: string;
+  email: string
   /**
    * Whether the email of the user has been verified
    */
-  emailVerified: boolean;
+  emailVerified: boolean
   /**
    * The image of the user
    */
-  image?: string | null;
-  createdAt: string;
-  updatedAt: string;
+  image?: string | null
+  createdAt: string
+  updatedAt: string
   /**
    * The username of the user
    */
-  username?: string | null;
+  username?: string | null
   /**
    * The display username of the user
    */
-  displayUsername?: string | null;
+  displayUsername?: string | null
   /**
    * The normalized email of the user
    */
-  normalizedEmail?: string | null;
+  normalizedEmail?: string | null
   /**
    * Whether the user has two factor authentication enabled
    */
-  twoFactorEnabled?: boolean | null;
+  twoFactorEnabled?: boolean | null
   /**
    * The role of the user
    */
-  role?: ('admin' | 'user') | null;
+  role?: ("admin" | "user") | null
   /**
    * Whether the user is banned from the platform
    */
-  banned?: boolean | null;
+  banned?: boolean | null
   /**
    * The reason for the ban
    */
-  banReason?: string | null;
+  banReason?: string | null
   /**
    * The date and time when the ban will expire
    */
-  banExpires?: string | null;
+  banExpires?: string | null
 }
 /**
  * Sessions are active sessions for users. They are used to authenticate users with a session token
@@ -209,37 +217,37 @@ export interface User {
  * via the `definition` "sessions".
  */
 export interface Session {
-  id: string;
+  id: string
   /**
    * The date and time when the session will expire
    */
-  expiresAt: string;
+  expiresAt: string
   /**
    * The unique session token
    */
-  token: string;
-  createdAt: string;
-  updatedAt: string;
+  token: string
+  createdAt: string
+  updatedAt: string
   /**
    * The IP address of the device
    */
-  ipAddress?: string | null;
+  ipAddress?: string | null
   /**
    * The user agent information of the device
    */
-  userAgent?: string | null;
+  userAgent?: string | null
   /**
    * The user that the session belongs to
    */
-  user: string | User;
+  user: string | User
   /**
    * The admin who is impersonating this session
    */
-  impersonatedBy?: (string | null) | User;
+  impersonatedBy?: (string | null) | User
   /**
    * The currently active organization for the session
    */
-  activeOrganization?: (string | null) | Organization;
+  activeOrganization?: (string | null) | Organization
 }
 /**
  * Organizations are groups of users that share access to certain resources.
@@ -248,25 +256,25 @@ export interface Session {
  * via the `definition` "organizations".
  */
 export interface Organization {
-  id: string;
+  id: string
   /**
    * The name of the organization.
    */
-  name: string;
+  name: string
   /**
    * The slug of the organization.
    */
-  slug?: string | null;
+  slug?: string | null
   /**
    * The logo of the organization.
    */
-  logo?: string | null;
-  createdAt: string;
+  logo?: string | null
+  createdAt: string
   /**
    * Additional metadata for the organization.
    */
-  metadata?: string | null;
-  updatedAt: string;
+  metadata?: string | null
+  updatedAt: string
 }
 /**
  * Accounts are used to store user accounts for authentication providers
@@ -275,49 +283,49 @@ export interface Organization {
  * via the `definition` "accounts".
  */
 export interface Account {
-  id: string;
+  id: string
   /**
    * The id of the account as provided by the SSO or equal to userId for credential accounts
    */
-  accountId: string;
+  accountId: string
   /**
    * The id of the provider as provided by the SSO
    */
-  providerId: string;
+  providerId: string
   /**
    * The user that the account belongs to
    */
-  user: string | User;
+  user: string | User
   /**
    * The access token of the account. Returned by the provider
    */
-  accessToken?: string | null;
+  accessToken?: string | null
   /**
    * The refresh token of the account. Returned by the provider
    */
-  refreshToken?: string | null;
+  refreshToken?: string | null
   /**
    * The id token for the account. Returned by the provider
    */
-  idToken?: string | null;
+  idToken?: string | null
   /**
    * The date and time when the access token will expire
    */
-  accessTokenExpiresAt?: string | null;
+  accessTokenExpiresAt?: string | null
   /**
    * The date and time when the refresh token will expire
    */
-  refreshTokenExpiresAt?: string | null;
+  refreshTokenExpiresAt?: string | null
   /**
    * The scope of the account. Returned by the provider
    */
-  scope?: string | null;
+  scope?: string | null
   /**
    * The hashed password of the account. Mainly used for email and password authentication
    */
-  password?: string | null;
-  createdAt: string;
-  updatedAt: string;
+  password?: string | null
+  createdAt: string
+  updatedAt: string
 }
 /**
  * Verifications are used to verify authentication requests
@@ -326,21 +334,21 @@ export interface Account {
  * via the `definition` "verifications".
  */
 export interface Verification {
-  id: string;
+  id: string
   /**
    * The identifier of the verification request
    */
-  identifier: string;
+  identifier: string
   /**
    * The value to be verified
    */
-  value: string;
+  value: string
   /**
    * The date and time when the verification request will expire
    */
-  expiresAt: string;
-  createdAt: string;
-  updatedAt: string;
+  expiresAt: string
+  createdAt: string
+  updatedAt: string
 }
 /**
  * Two factor authentication secrets
@@ -349,21 +357,21 @@ export interface Verification {
  * via the `definition` "twoFactors".
  */
 export interface TwoFactor {
-  id: string;
+  id: string
   /**
    * The secret used to generate the TOTP code.
    */
-  secret: string;
+  secret: string
   /**
    * The backup codes used to recover access to the account if the user loses access to their phone or email
    */
-  backupCodes: string;
+  backupCodes: string
   /**
    * The user that the two factor authentication secret belongs to
    */
-  user: string | User;
-  updatedAt: string;
-  createdAt: string;
+  user: string | User
+  updatedAt: string
+  createdAt: string
 }
 /**
  * Passkeys are used to authenticate users
@@ -372,42 +380,42 @@ export interface TwoFactor {
  * via the `definition` "passkeys".
  */
 export interface Passkey {
-  id: string;
+  id: string
   /**
    * The name of the passkey
    */
-  name?: string | null;
+  name?: string | null
   /**
    * The public key of the passkey
    */
-  publicKey: string;
+  publicKey: string
   /**
    * The user that the passkey belongs to
    */
-  user: string | User;
+  user: string | User
   /**
    * The unique identifier of the registered credential
    */
-  credentialID: string;
+  credentialID: string
   /**
    * The counter of the passkey
    */
-  counter: number;
+  counter: number
   /**
    * The type of device used to register the passkey
    */
-  deviceType: string;
+  deviceType: string
   /**
    * Whether the passkey is backed up
    */
-  backedUp: boolean;
+  backedUp: boolean
   /**
    * The transports used to register the passkey
    */
-  transports: string;
-  createdAt: string;
-  aaguid?: string | null;
-  updatedAt: string;
+  transports: string
+  createdAt: string
+  aaguid?: string | null
+  updatedAt: string
 }
 /**
  * Members of an organization.
@@ -416,25 +424,25 @@ export interface Passkey {
  * via the `definition` "members".
  */
 export interface Member {
-  id: string;
+  id: string
   /**
    * The organization that the member belongs to.
    */
-  organization: string | Organization;
+  organization: string | Organization
   /**
    * The user that is a member of the organization.
    */
-  user: string | User;
+  user: string | User
   /**
    * The role of the member in the organization.
    */
-  role: string;
+  role: string
   /**
    * The team that the member belongs to.
    */
-  team?: string | null;
-  createdAt: string;
-  updatedAt: string;
+  team?: string | null
+  createdAt: string
+  updatedAt: string
 }
 /**
  * Invitations to join an organization
@@ -443,37 +451,37 @@ export interface Member {
  * via the `definition` "invitations".
  */
 export interface Invitation {
-  id: string;
+  id: string
   /**
    * The organization that the user is being invited to.
    */
-  organization: string | Organization;
+  organization: string | Organization
   /**
    * The email of the user being invited.
    */
-  email: string;
+  email: string
   /**
    * The role of the user being invited.
    */
-  role?: string | null;
+  role?: string | null
   /**
    * The team that the user is being invited to.
    */
-  team?: string | null;
+  team?: string | null
   /**
    * The status of the invitation.
    */
-  status: string;
+  status: string
   /**
    * The date and time when the invitation will expire.
    */
-  expiresAt: string;
+  expiresAt: string
   /**
    * The user who invited the user.
    */
-  inviter: string | User;
-  updatedAt: string;
-  createdAt: string;
+  inviter: string | User
+  updatedAt: string
+  createdAt: string
 }
 /**
  * Teams are groups of users that share access to certain resources.
@@ -482,339 +490,338 @@ export interface Invitation {
  * via the `definition` "teams".
  */
 export interface Team {
-  id: string;
+  id: string
   /**
    * The name of the team.
    */
-  name: string;
+  name: string
   /**
    * The organization that the team belongs to.
    */
-  organization: string | Organization;
-  createdAt: string;
-  updatedAt: string;
+  organization: string | Organization
+  createdAt: string
+  updatedAt: string
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "admin-invitations".
  */
 export interface AdminInvitation {
-  id: string;
-  role: 'admin' | 'user';
-  token: string;
-  url?: string | null;
-  updatedAt: string;
-  createdAt: string;
+  id: string
+  role: "admin" | "user"
+  token: string
+  url?: string | null
+  updatedAt: string
+  createdAt: string
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "legal-documents".
  */
 export interface LegalDocument {
-  id: string;
-  title: string;
-  updatedAt: string;
-  createdAt: string;
+  id: string
+  title: string
+  updatedAt: string
+  createdAt: string
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
-  id: string;
+  id: string
   document?:
     | ({
-        relationTo: 'users';
-        value: string | User;
+        relationTo: "users"
+        value: string | User
       } | null)
     | ({
-        relationTo: 'sessions';
-        value: string | Session;
+        relationTo: "sessions"
+        value: string | Session
       } | null)
     | ({
-        relationTo: 'accounts';
-        value: string | Account;
+        relationTo: "accounts"
+        value: string | Account
       } | null)
     | ({
-        relationTo: 'verifications';
-        value: string | Verification;
+        relationTo: "verifications"
+        value: string | Verification
       } | null)
     | ({
-        relationTo: 'twoFactors';
-        value: string | TwoFactor;
+        relationTo: "twoFactors"
+        value: string | TwoFactor
       } | null)
     | ({
-        relationTo: 'passkeys';
-        value: string | Passkey;
+        relationTo: "passkeys"
+        value: string | Passkey
       } | null)
     | ({
-        relationTo: 'organizations';
-        value: string | Organization;
+        relationTo: "organizations"
+        value: string | Organization
       } | null)
     | ({
-        relationTo: 'members';
-        value: string | Member;
+        relationTo: "members"
+        value: string | Member
       } | null)
     | ({
-        relationTo: 'invitations';
-        value: string | Invitation;
+        relationTo: "invitations"
+        value: string | Invitation
       } | null)
     | ({
-        relationTo: 'teams';
-        value: string | Team;
+        relationTo: "teams"
+        value: string | Team
       } | null)
     | ({
-        relationTo: 'admin-invitations';
-        value: string | AdminInvitation;
+        relationTo: "admin-invitations"
+        value: string | AdminInvitation
       } | null)
     | ({
-        relationTo: 'legal-documents';
-        value: string | LegalDocument;
-      } | null);
-  globalSlug?: string | null;
+        relationTo: "legal-documents"
+        value: string | LegalDocument
+      } | null)
+  globalSlug?: string | null
   user: {
-    relationTo: 'users';
-    value: string | User;
-  };
-  updatedAt: string;
-  createdAt: string;
+    relationTo: "users"
+    value: string | User
+  }
+  updatedAt: string
+  createdAt: string
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-preferences".
  */
 export interface PayloadPreference {
-  id: string;
+  id: string
   user: {
-    relationTo: 'users';
-    value: string | User;
-  };
-  key?: string | null;
+    relationTo: "users"
+    value: string | User
+  }
+  key?: string | null
   value?:
     | {
-        [k: string]: unknown;
+        [k: string]: unknown
       }
     | unknown[]
     | string
     | number
     | boolean
-    | null;
-  updatedAt: string;
-  createdAt: string;
+    | null
+  updatedAt: string
+  createdAt: string
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-migrations".
  */
 export interface PayloadMigration {
-  id: string;
-  name?: string | null;
-  batch?: number | null;
-  updatedAt: string;
-  createdAt: string;
+  id: string
+  name?: string | null
+  batch?: number | null
+  updatedAt: string
+  createdAt: string
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users_select".
  */
 export interface UsersSelect<T extends boolean = true> {
-  name?: T;
-  email?: T;
-  emailVerified?: T;
-  image?: T;
-  createdAt?: T;
-  updatedAt?: T;
-  username?: T;
-  displayUsername?: T;
-  normalizedEmail?: T;
-  twoFactorEnabled?: T;
-  role?: T;
-  banned?: T;
-  banReason?: T;
-  banExpires?: T;
+  name?: T
+  email?: T
+  emailVerified?: T
+  image?: T
+  createdAt?: T
+  updatedAt?: T
+  username?: T
+  displayUsername?: T
+  normalizedEmail?: T
+  twoFactorEnabled?: T
+  role?: T
+  banned?: T
+  banReason?: T
+  banExpires?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "sessions_select".
  */
 export interface SessionsSelect<T extends boolean = true> {
-  expiresAt?: T;
-  token?: T;
-  createdAt?: T;
-  updatedAt?: T;
-  ipAddress?: T;
-  userAgent?: T;
-  user?: T;
-  impersonatedBy?: T;
-  activeOrganization?: T;
+  expiresAt?: T
+  token?: T
+  createdAt?: T
+  updatedAt?: T
+  ipAddress?: T
+  userAgent?: T
+  user?: T
+  impersonatedBy?: T
+  activeOrganization?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "accounts_select".
  */
 export interface AccountsSelect<T extends boolean = true> {
-  accountId?: T;
-  providerId?: T;
-  user?: T;
-  accessToken?: T;
-  refreshToken?: T;
-  idToken?: T;
-  accessTokenExpiresAt?: T;
-  refreshTokenExpiresAt?: T;
-  scope?: T;
-  password?: T;
-  createdAt?: T;
-  updatedAt?: T;
+  accountId?: T
+  providerId?: T
+  user?: T
+  accessToken?: T
+  refreshToken?: T
+  idToken?: T
+  accessTokenExpiresAt?: T
+  refreshTokenExpiresAt?: T
+  scope?: T
+  password?: T
+  createdAt?: T
+  updatedAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "verifications_select".
  */
 export interface VerificationsSelect<T extends boolean = true> {
-  identifier?: T;
-  value?: T;
-  expiresAt?: T;
-  createdAt?: T;
-  updatedAt?: T;
+  identifier?: T
+  value?: T
+  expiresAt?: T
+  createdAt?: T
+  updatedAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "twoFactors_select".
  */
 export interface TwoFactorsSelect<T extends boolean = true> {
-  secret?: T;
-  backupCodes?: T;
-  user?: T;
-  updatedAt?: T;
-  createdAt?: T;
+  secret?: T
+  backupCodes?: T
+  user?: T
+  updatedAt?: T
+  createdAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "passkeys_select".
  */
 export interface PasskeysSelect<T extends boolean = true> {
-  name?: T;
-  publicKey?: T;
-  user?: T;
-  credentialID?: T;
-  counter?: T;
-  deviceType?: T;
-  backedUp?: T;
-  transports?: T;
-  createdAt?: T;
-  aaguid?: T;
-  updatedAt?: T;
+  name?: T
+  publicKey?: T
+  user?: T
+  credentialID?: T
+  counter?: T
+  deviceType?: T
+  backedUp?: T
+  transports?: T
+  createdAt?: T
+  aaguid?: T
+  updatedAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "organizations_select".
  */
 export interface OrganizationsSelect<T extends boolean = true> {
-  name?: T;
-  slug?: T;
-  logo?: T;
-  createdAt?: T;
-  metadata?: T;
-  updatedAt?: T;
+  name?: T
+  slug?: T
+  logo?: T
+  createdAt?: T
+  metadata?: T
+  updatedAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "members_select".
  */
 export interface MembersSelect<T extends boolean = true> {
-  organization?: T;
-  user?: T;
-  role?: T;
-  team?: T;
-  createdAt?: T;
-  updatedAt?: T;
+  organization?: T
+  user?: T
+  role?: T
+  team?: T
+  createdAt?: T
+  updatedAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "invitations_select".
  */
 export interface InvitationsSelect<T extends boolean = true> {
-  organization?: T;
-  email?: T;
-  role?: T;
-  team?: T;
-  status?: T;
-  expiresAt?: T;
-  inviter?: T;
-  updatedAt?: T;
-  createdAt?: T;
+  organization?: T
+  email?: T
+  role?: T
+  team?: T
+  status?: T
+  expiresAt?: T
+  inviter?: T
+  updatedAt?: T
+  createdAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "teams_select".
  */
 export interface TeamsSelect<T extends boolean = true> {
-  name?: T;
-  organization?: T;
-  createdAt?: T;
-  updatedAt?: T;
+  name?: T
+  organization?: T
+  createdAt?: T
+  updatedAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "admin-invitations_select".
  */
 export interface AdminInvitationsSelect<T extends boolean = true> {
-  role?: T;
-  token?: T;
-  url?: T;
-  updatedAt?: T;
-  createdAt?: T;
+  role?: T
+  token?: T
+  url?: T
+  updatedAt?: T
+  createdAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "legal-documents_select".
  */
 export interface LegalDocumentsSelect<T extends boolean = true> {
-  title?: T;
-  updatedAt?: T;
-  createdAt?: T;
+  title?: T
+  updatedAt?: T
+  createdAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents_select".
  */
 export interface PayloadLockedDocumentsSelect<T extends boolean = true> {
-  document?: T;
-  globalSlug?: T;
-  user?: T;
-  updatedAt?: T;
-  createdAt?: T;
+  document?: T
+  globalSlug?: T
+  user?: T
+  updatedAt?: T
+  createdAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-preferences_select".
  */
 export interface PayloadPreferencesSelect<T extends boolean = true> {
-  user?: T;
-  key?: T;
-  value?: T;
-  updatedAt?: T;
-  createdAt?: T;
+  user?: T
+  key?: T
+  value?: T
+  updatedAt?: T
+  createdAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-migrations_select".
  */
 export interface PayloadMigrationsSelect<T extends boolean = true> {
-  name?: T;
-  batch?: T;
-  updatedAt?: T;
-  createdAt?: T;
+  name?: T
+  batch?: T
+  updatedAt?: T
+  createdAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "auth".
  */
 export interface Auth {
-  [k: string]: unknown;
+  [k: string]: unknown
 }
 
-
-declare module 'payload' {
+declare module "payload" {
   export interface GeneratedTypes extends Config {}
 }
