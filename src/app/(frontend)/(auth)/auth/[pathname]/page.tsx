@@ -5,7 +5,7 @@ import { redirect } from "next/navigation"
 import { getPayload } from "@/lib/payload"
 import { AuthCard } from "@daveyplate/better-auth-ui"
 import AuthCardWrapper from "@/modules/auth/components/auth-card-wrapper"
-import { cn } from "@/utilities/cn"
+
 
 export function generateStaticParams() {
     return Object.values(authViewPaths).map((pathname) => ({ pathname }))
@@ -26,9 +26,10 @@ export default async function AuthPage({ params }: { params: Promise<{ pathname:
 
     return (
         <AuthCardWrapper title="Welcome Back!" subtitle="Please sign in to continue.">
-            <AuthCard pathname={pathname} classNames={{
-                base: `${pathname.toLocaleLowerCase} border-none p-0 shadow-none`
-            }} />
+            <AuthCard
+                pathname={pathname} classNames={{
+                    base: `${pathname.toLocaleLowerCase} border-none p-0 shadow-none`
+                }} otpSeparators={2} redirectTo="/dashboard" socialLayout="horizontal" />
         </AuthCardWrapper>
     )
 }

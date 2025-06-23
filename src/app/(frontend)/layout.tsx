@@ -8,6 +8,7 @@ import { ThemeProvider } from '@/providers/theme-provider';
 import { isImpersonationEnabled } from '@/modules/auth/utils/is-enabled';
 import { ImpersonatingBar } from '@/modules/auth/components/admin-plugin/impersonating-bar';
 import { AuthProviders } from '@/modules/auth/providers/auth-provider';
+import { Toaster } from '@/components/ui/sonner';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,8 +37,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             enableSystem
             disableTransitionOnChange
           >
-            {isImpersonationEnabled && false && <ImpersonatingBar />}
+            {isImpersonationEnabled && <ImpersonatingBar />}
             {children}
+            <Toaster />
             <TailwindIndicator />
           </ThemeProvider>
         </AuthProviders>

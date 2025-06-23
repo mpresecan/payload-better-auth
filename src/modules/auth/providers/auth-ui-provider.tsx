@@ -21,8 +21,9 @@ export function AuthUIProvider({ children }: { children: ReactNode }) {
             }}
             Link={Link}
             emailOTP={true}
-            // magicLink={true}
-            // providers={['google']}
+            magicLink={true}
+            providers={['google', 'apple', 'github']}
+            passkey={true}
             basePath="/auth"
         >
             {children}

@@ -37,17 +37,19 @@ export const betterAuthPlugins = [
     sendMagicLink: async ({ email, token, url }, request) => {
       console.log('Send magic link for user: ', email, token, url)
     }
+
   }),
   emailOTP({
     async sendVerificationOTP({ email, otp, type }) {
       console.log('Send verification OTP for user: ', email, otp, type)
-    }
+    },
+    sendVerificationOnSignUp: true
   }),
-  // passkey({
-  //   rpID: 'localhost',
-  //   rpName: 'Localhost',
-  //   origin: 'http://localhost:3000'
-  // }),
+  passkey({
+    rpID: 'localhost',
+    rpName: 'Localhost',
+    origin: 'http://localhost:3000'
+  }),
   admin(),
   organization({
     teams: {
@@ -82,13 +84,13 @@ export const betterAuthOptions: BetterAuthOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string
     }
   },
-  // emailVerification: {
-  //   sendOnSignUp: true,
-  //   autoSignInAfterVerification: true,
-  //   async sendVerificationEmail({ user, url }) {
-  //     console.log('Send verification email for user: ', url)
-  //   }
-  // },
+  emailVerification: {
+    sendOnSignUp: true,
+    autoSignInAfterVerification: true,
+    async sendVerificationEmail({ user, url }) {
+      console.log('Send verification email for user: ', url)
+    }
+  },
   plugins: betterAuthPlugins,
   user: {
     changeEmail: {
